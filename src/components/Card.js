@@ -1,16 +1,16 @@
-function Card() {
+function Card(props) {
   return (
     <div className="flex text-sm ">
       <div className="w-[175px] space-y-1">
-        <img src="./image12.png" className="w-full" />
+        <img src={props.img} className="w-full" />
         <div className="flex space-x-1">
           <img src="./star.png" className="" />
-          <span> 5.0 </span>
-          <span> (6) .</span>
-          <span> USA </span>
+          <span> {props.rating} </span>
+          <span> {props.reviewCount} .</span>
+          <span> {props.contry} </span>
         </div>
 
-        <p>Life lessons with Katie Zaferes
+        <p>{props.title}
  </p>
         <p> <span className="font-bold">   From $136 / </span> person</p>
 
