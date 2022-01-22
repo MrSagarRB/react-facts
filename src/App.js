@@ -1,42 +1,33 @@
-import React from "react"
-import Card from "./components/Card"
-import HeroComp from "./components/HeroComp"
-
-import Navbar from "./components/Navbar"
-
-
-
-
+import React from "react";
+import Card from "./components/Card";
+import HeroComp from "./components/HeroComp";
+import Data from "./components/Data";
+import Navbar from "./components/Navbar";
 
 function App() {
-    return (
-        <div>
-           
+  const dataElements = Data.map(x => {
+    return <Card 
+    img={x.img} 
+    rating={x.stats.rating}
+    reviewCount={x.stats.reviewCount}
+    contry={x.location}
+    title={x.title}
+    price={x.price}
+
+     />
+  })
+ 
 
 
-{/* <Navbar />
-<HeroComp /> */}
-
-
-
-
-<Card  
- img="./image12.png"
- rating="5.0"
- reviewCount="(6)"
- contry="India"
- title="Life Lessons with katie Zaferes"
- price="$150"
-
-
-/>
-
-
-
-
-
-        </div>
-    )
+  return <div>
+    
+    <Navbar />
+    <HeroComp />
+    <div className="flex overflow-auto  scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100"> 
+    {dataElements}
+    </div>
+    
+    </div>;
 }
 
-export default App
+export default App;

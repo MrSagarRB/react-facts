@@ -1,33 +1,27 @@
 function Card(props) {
   return (
-    <div className="flex text-sm ">
-      <div className="w-[175px] space-y-1">
-        <img src={props.img} className="w-full" />
-        <div className="flex space-x-1">
-          <img src="./star.png" className="" />
-          <span> {props.rating} </span>
-          <span> {props.reviewCount} .</span>
-          <span> {props.contry} </span>
+    
+   
+      <div className="m-5 w-44 flex  flex-col ">
+        <img src={props.img} className="w-full rounded-xl"  />
+        
+        <div className="flex text-base mt-2">
+          <img src="./star.png" className="h-5" />
+          <span className="font-semibold">  {props.rating} </span>
+          <span className="text-gray-400"> ({props.reviewCount}) .</span>
+          <span className="text-gray-400"> {props.contry} </span>
         </div>
 
-        <p>{props.title}
- </p>
-        <p> <span className="font-bold">   From $136 / </span> person</p>
-
-
+        <p>{props.title}</p>
+        <p className="">
+          <span className="font-bold"> From ${props.price} / </span> person
+        </p>
 
 
       </div>
 
-      {/* 
-            <div>
-            <img src="./image12.png" />
-            </div>
 
-            <div>
-            <img src="./image12.png" />
-            </div> */}
-    </div>
+
   );
 }
 
